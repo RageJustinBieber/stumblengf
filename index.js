@@ -51,7 +51,6 @@ By : ${chalk.blue('Yinyan#1581')}  ${chalk.blue('')}
             const trophy = data.User.SkillRating;
             const crown = data.User.Crowns
             console.log(chalk.blue(`\r[ ${moment().format('HH:mm:ss')} ] Sukses! | Nama : ${username} | Negara : ${country} | ${chalk.blue(`Piala : ${trophy}`)} | ${chalk.blue(`Mahkota: ${crown}`)}`));
-            await sleep(3000);
 
         } else if (result == 'BANNED') {
             console.log(chalk.red(`\r[ ${moment().format('HH:mm:ss')} ] Akun Kamu Telah Di Banned `));

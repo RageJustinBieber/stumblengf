@@ -3,10 +3,6 @@ const moment = require('moment');
 const chalk = require('chalk');
 const rs = require('readline-sync');
 
-function sleep(ms) {
-     return new Promise(resolve => setTimeout(resolve,ms));
- }
-
 const GoStumble = (auth) => new Promise((resolve, reject) => {
 
     fetch('http://kitkabackend.eastus.cloudapp.azure.com:5010/round/finishv2/3', {
@@ -47,10 +43,10 @@ By : ${chalk.blue('Yinyan#1581')}  ${chalk.blue('')}
 
             const data = JSON.parse(result);
             const username = data.User.Username;
-            const country = data.User.Country;
             const trophy = data.User.SkillRating;
             const crown = data.User.Crowns
-            console.log(chalk.blue(`\r[ ${moment().format('HH:mm:ss')} ] Sukses! | Nama : ${username} | Negara : ${country} | ${chalk.blue(`Piala : ${trophy}`)} | ${chalk.blue(`Mahkota: ${crown}`)}`));
+            console.log(chalk.bgBlack(`\r[ ${moment().format('HH:mm:ss')} ] ${chalk.white(`User : ${username}`)} | ${chalk.yellow(`Trophy : ${trophy}`)} | ${chalk.red(`Crown : ${crown}`)}`));
+      await sleep(5000);
 
         } else if (result == 'BANNED') {
             console.log(chalk.red(`\r[ ${moment().format('HH:mm:ss')} ] Akun Kamu Telah Di Banned `));
